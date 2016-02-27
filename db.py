@@ -42,4 +42,4 @@ class Database:
         sql = 'SELECT id FROM {0}'
         sql = sql.format(self.table_name)
         self.c.execute(sql)
-        return self.c.fetchall()
+        return [x[0] for x in self.c.fetchall()]
